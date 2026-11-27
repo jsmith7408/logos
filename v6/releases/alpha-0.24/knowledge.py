@@ -16,6 +16,7 @@ def opposite(value):
 class Knowledge:
     def __init__(self, db):
         self.db = db
+        self.before_infer = None
         with db:
             db.execute('CREATE TABLE IF NOT EXISTS native_facts(literal TEXT, source TEXT, PRIMARY KEY(literal,source))')
             db.execute('CREATE TABLE IF NOT EXISTS native_rules(premises TEXT, conclusion TEXT, PRIMARY KEY(premises,conclusion))')
@@ -24,6 +25,8 @@ class Knowledge:
         atom(literal)
         if not isinstance(source,str) or not source.strip() or len(source)>1000:
             raise ValueError('source required')
+        if source.lower().startswith('attested:'):
+            raise ValueError('reserved evidence source')
         with self.db:
             self.db.execute('INSERT OR IGNORE INTO native_facts VALUES (?,?)',(literal,source))
 
@@ -38,7 +41,10 @@ class Knowledge:
         atom(query)
         if type(budget) is not int or not 1<=budget<=10000:
             raise ValueError('invalid budget')
-        facts=self.db.execute('SELECT literal,source FROM native_facts ORDER BY literal,source LIMIT ?', (budget+1,)).fetchall()
+        if self.before_infer is not None: self.before_infer()
+        fact_sql = 'SELECT literal,source FROM native_facts'
+        if self.before_infer is None: fact_sql += " WHERE source NOT LIKE 'attested:%'"
+        facts=self.db.execute(fact_sql+' ORDER BY literal,source LIMIT ?', (budget+1,)).fetchall()
         rules=self.db.execute('SELECT premises,conclusion FROM native_rules ORDER BY premises,conclusion LIMIT ?', (budget+1,)).fetchall()
         proof={}; steps=0
         def result(status):

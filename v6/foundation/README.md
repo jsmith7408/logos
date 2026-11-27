@@ -1,0 +1,2 @@
+# LOGOS V6.0 — local foundation
+Run `python -m unittest -v` with Python 3.10+. Core(path) stores research records in SQLite; investigate(question, provider) calls a provider and records the response; search(term) retrieves literal matches. DemoProvider echoes questions and is not AI inference. Other provider outputs are unverified, not established knowledge. No web server, authentication, dashboard, live provider, or V5 gate integration yet. Local database is mutable. V5 archives are preserved separately; owner release does not imply scientific or security certification.

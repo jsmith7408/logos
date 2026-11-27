@@ -1,32 +1,20 @@
 # Project LOGOS
 
-Evidence-gated applied intelligence research: local reasoning workflows, model-independent provider adapters, persistent research records, collective comparison, deterministic arithmetic and symbolic inference, and explicit uncertainty preservation.
+Evidence-gated local applied intelligence research: native reasoning, persistent investigations, bounded workflows, optional local model adapters, and explicit uncertainty.
 
-## Latest consolidated source: V6.0 Alpha 0.23
+## Latest consolidated source: V6.0 Alpha 0.24
 
-- [Source and application](v6/releases/alpha-0.23/)
-- [Installation and use](v6/releases/alpha-0.23/README.md)
-- [Development report](v6/releases/alpha-0.23/INCREMENT.md)
-- [Native research planner](v6/releases/alpha-0.23/planner.py)
-- [Continuation tests](v6/releases/alpha-0.23/test_resume.py)
-- [Regression execution log](v6/releases/alpha-0.23/v6_tests_23.txt)
-- [Integrity manifest](v6/releases/alpha-0.23/SHA256SUMS)
-- [Previous release](v6/releases/alpha-0.22/)
+- [Current V6 source](v6/) — mirrors the release snapshot
+- [Versioned release](v6/releases/alpha-0.24/)
+- [Installation and use](v6/README.md)
+- [Development report](v6/INCREMENT.md)
+- [Evidence lifecycle](v6/verified.py) and [regression tests](v6/test_attestation_lifecycle.py)
+- [V6 test log](v6/v6_tests_24_consolidated.txt) and [V5 test log](v6/v5_tests_24_consolidated.txt)
+- [SHA-256 manifest](v6/SHA256SUMS)
+- [Original V6 foundation](v6/foundation/)
 
-Persistent investigation history and bounded re-evaluation after knowledge changes or restart. Prior reports remain intact. No automatic evidence acquisition.
+Alpha 0.24 includes revalidated HMAC attestations, persistent trust metadata, explicit key reload and revocation, controlled premise promotion and withdrawal, a bounded relationship graph, and automatic queued research continuation. The earlier continuation and acquisition variants remain preserved. **119/119 V6 and 70/70 inherited V5 regression executions passed locally.** Run the tests and verify the manifest from v6/ or the release directory.
 
-## Status and limitations
+## Limitations
 
-The local V6 regression suite passed **99/99 tests** (28.192 seconds), including four new continuation tests. No fresh V5 run or independent CI. Concurrent writers remain unsupported; offline language-model integration remains pending.
-
-V5.0 is an **owner-authorized release**, not independent scientific validation or external security certification. Independent held-out evaluation, live-provider validation and external security assessment remain outstanding. Premises are not authenticated, dependency mapping is conservative, and this is a local single-user prototype, not a production-deployed autonomous system. Hashes do not establish authentic or independent corroboration.
-
-Earlier [V6 foundation](v6/README.md) and [V5 acceptance limitations](v5/ACCEPTANCE.md) are preserved.
-
-## Alpha 0.23 acquisition variant
-
-[Preserved acquisition snapshot](v6/releases/alpha-0.23-acquisition/) — 104/104 reported local tests; optional loopback model adapter (mocked, not live validated), restricted extraction and candidate storage. Separate from the 99-test continuation snapshot; integration validation remains required.
-
-## Alpha 0.24 initial attestation release
-
-[Source](v6/releases/alpha-0.24/) · [Report](v6/releases/alpha-0.24/INCREMENT.md) · [Tests](v6/releases/alpha-0.24/v6_tests_24.txt). 109 local tests passed. HMAC authentication and explicit promotion prototype; live model, revocation, automatic continuation and independent validation outstanding.
+The local Ollama smoke test could not run because the service was unavailable. No actual live model validation, external evidence collection, proof of source independence, calibrated reliability, independent held-out scientific comparison or external security certification. Trust metadata and manual facts are local and mutable; only a trusted single-user process is supported. V5 remains owner-authorized, not independently certified. No public deployment or paid API. See [V5 acceptance](v5/ACCEPTANCE.md), [full report](v6/INCREMENT.md), [previous continuation release](v6/releases/alpha-0.23/) and [acquisition variant](v6/releases/alpha-0.23-acquisition/). The original Alpha 0.24 snapshot remains in commit 31ceda02c5a976f5d780e73ba6f31408655cebfb.
