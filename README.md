@@ -22,3 +22,7 @@ The local V6 regression suite passed **99/99 tests** (28.192 seconds), including
 V5.0 is an **owner-authorized release**, not independent scientific validation or external security certification. Independent held-out evaluation, live-provider validation and external security assessment remain outstanding. Premises are not authenticated, dependency mapping is conservative, and this is a local single-user prototype, not a production-deployed autonomous system. Hashes do not establish authentic or independent corroboration.
 
 Earlier [V6 foundation](v6/README.md) and [V5 acceptance limitations](v5/ACCEPTANCE.md) are preserved.
+
+## Alpha 0.23 acquisition variant
+
+[Preserved acquisition snapshot](v6/releases/alpha-0.23-acquisition/) — 104/104 reported local tests; optional loopback model adapter (mocked, not live validated), restricted extraction and candidate storage. Separate from the 99-test continuation snapshot; integration validation remains required.
