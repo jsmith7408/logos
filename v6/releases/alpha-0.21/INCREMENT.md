@@ -1,0 +1,2 @@
+# Alpha 0.21
+Opt-in dependency-scoped propositional inference via infer-local: preserves global infer: behavior. Backward dependency closure includes both polarities; relevant conflicts block conclusions. Rule scans consume budget. Four new tests; 86 total passed in 28.275s. Stored assertions remain unauthenticated. Conservative syntactic relevance can overinclude inactive rules. No semantic parsing or evidence weighting added.
