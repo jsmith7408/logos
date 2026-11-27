@@ -1,0 +1,2 @@
+# Alpha 0.31 candidate — tokenizer
+Baseline 176a42d1561d9a840f13a7bde8714070769df9ec. Standalone native byte-pair tokenizer; seven local unit tests passed. Run `python -m unittest -v` in this directory. Not integrated with attention model (vocabulary cap and special-token mapping require changes). Full inherited regression and independent evaluation outstanding. Direct clone DNS failed. No external inference, paid API or deployment. V5 owner-authorized only. Rollback: retain Alpha 0.30 unchanged. Do not merge until integration and full regression pass.
