@@ -1,0 +1,11 @@
+test_dashboard (test_evidence.EvidenceHTTP.test_dashboard) ... 127.0.0.1 - - [27/Nov/2026 07:15:39] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 07:15:39] "POST /evidence HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 07:15:39] "GET / HTTP/1.1" 200 -
+ok
+test_conflict (test_evidence.EvidenceTests.test_conflict) ... ok
+test_invalid (test_evidence.EvidenceTests.test_invalid) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.568s
+
+OK

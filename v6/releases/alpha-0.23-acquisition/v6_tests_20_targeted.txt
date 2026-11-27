@@ -1,0 +1,12 @@
+test_budget (test_knowledge.Tests.test_budget) ... ok
+test_chain (test_knowledge.Tests.test_chain) ... ok
+test_conflict (test_knowledge.Tests.test_conflict) ... ok
+test_native_route (test_knowledge.Tests.test_native_route) ... ok
+test_persistence_duplicate (test_knowledge.Tests.test_persistence_duplicate) ... ok
+test_refutation_and_validation (test_knowledge.Tests.test_refutation_and_validation) ... ok
+test_unknown_cycle (test_knowledge.Tests.test_unknown_cycle) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.040s
+
+OK
