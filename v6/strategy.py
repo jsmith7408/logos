@@ -8,6 +8,7 @@ from acquisition import Acquisition
 from verified import Verified
 from reflection import ReflectiveMonitor
 from research_scheduler import ResearchScheduler
+from adaptive import Adaptive
 class Strategy:
     def __init__(self, app):
         self.collective=Collective(app); self.db=app.core.db; self.knowledge=Knowledge(self.db)
@@ -18,12 +19,12 @@ class Strategy:
         self.knowledge.monitor=self.monitor
         self.collective.monitor=self.monitor
         self.scheduler=ResearchScheduler(self)
+        self.adaptive=Adaptive(self)
         with self.db: self.db.execute('CREATE TABLE IF NOT EXISTS strategies(id TEXT PRIMARY KEY, report TEXT NOT NULL)')
     def run(self, question, providers=None, budget=None, *, native_only=False):
         if not isinstance(question,str) or not question.strip() or len(question)>4000: raise ValueError('invalid question')
         start=time.monotonic()
-        try: answer=str(evaluate(question))
-        except (ValueError,SyntaxError,ZeroDivisionError,RecursionError): answer=None
+        answer=self.adaptive.compute(question)
         report=dict(id=str(uuid.uuid4()),question=question,authenticated=False,conclusion=answer)
         if question.startswith('infer-local:'):
             evidence=self.knowledge.infer(question[12:].strip(),isolate=True)
