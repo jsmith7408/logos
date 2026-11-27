@@ -1,0 +1,3 @@
+Requested: https://www.rfc-editor.org/rfc/rfc20.txt
+Result: gaierror: [Errno -3] Temporary failure in name resolution
+No response received; no third-party AI inference requested.
