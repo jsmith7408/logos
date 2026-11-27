@@ -6,12 +6,18 @@ from knowledge import Knowledge
 from planner import Planner
 from acquisition import Acquisition
 from verified import Verified
+from reflection import ReflectiveMonitor
+from research_scheduler import ResearchScheduler
 class Strategy:
     def __init__(self, app):
         self.collective=Collective(app); self.db=app.core.db; self.knowledge=Knowledge(self.db)
         self.planner=Planner(self)
         self.acquisition=Acquisition(self)
         self.verified=Verified(self)
+        self.monitor=ReflectiveMonitor(self.db)
+        self.knowledge.monitor=self.monitor
+        self.collective.monitor=self.monitor
+        self.scheduler=ResearchScheduler(self)
         with self.db: self.db.execute('CREATE TABLE IF NOT EXISTS strategies(id TEXT PRIMARY KEY, report TEXT NOT NULL)')
     def run(self, question, providers=None, budget=None, *, native_only=False):
         if not isinstance(question,str) or not question.strip() or len(question)>4000: raise ValueError('invalid question')
@@ -34,4 +40,5 @@ class Strategy:
             report.update(strategy='collective',classification='unverified',source=source['id'],provider_attempts=len(source['attempts']))
         report['elapsed_seconds']=time.monotonic()-start
         with self.db: self.db.execute('INSERT INTO strategies VALUES (?,?)',(report['id'],json.dumps(report)))
+        self.monitor.record("strategy",report)
         return report

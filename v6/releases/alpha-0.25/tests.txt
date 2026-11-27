@@ -1,0 +1,10 @@
+test_demo_label (test_core.Tests.test_demo_label) ... ok
+test_invalid (test_core.Tests.test_invalid) ... ok
+test_literal_search (test_core.Tests.test_literal_search) ... ok
+test_persistence (test_core.Tests.test_persistence) ... ok
+test_provider_failure (test_core.Tests.test_provider_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.006s
+
+OK

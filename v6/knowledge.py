@@ -17,6 +17,7 @@ class Knowledge:
     def __init__(self, db):
         self.db = db
         self.before_infer = None
+        self.monitor = None
         with db:
             db.execute('CREATE TABLE IF NOT EXISTS native_facts(literal TEXT, source TEXT, PRIMARY KEY(literal,source))')
             db.execute('CREATE TABLE IF NOT EXISTS native_rules(premises TEXT, conclusion TEXT, PRIMARY KEY(premises,conclusion))')
@@ -48,7 +49,9 @@ class Knowledge:
         rules=self.db.execute('SELECT premises,conclusion FROM native_rules ORDER BY premises,conclusion LIMIT ?', (budget+1,)).fetchall()
         proof={}; steps=0
         def result(status):
-            return dict(status=status,query=query,proof=proof,steps=steps,authenticated=False)
+            report=dict(status=status,query=query,proof=proof,steps=steps,authenticated=False)
+            if self.monitor is not None: self.monitor.record("infer",report)
+            return report
         if len(facts)+len(rules)>budget:
             return result('budget_exhausted')
         if isolate:

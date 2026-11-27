@@ -68,4 +68,5 @@ class Planner:
                             if p not in seen and p not in pending: pending.append(p)
                 r['truncated']=bool(pending) or r.get('rule_scan_truncated',False)
         with self.db: self.db.execute('INSERT INTO investigations VALUES (?,?,?)',(r['id'],objective,json.dumps(r)))
+        if getattr(self.strategy,"monitor",None) is not None: self.strategy.monitor.record("research",r)
         return r

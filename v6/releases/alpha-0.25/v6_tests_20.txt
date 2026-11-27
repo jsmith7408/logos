@@ -1,0 +1,42 @@
+127.0.0.1 - - [27/Nov/2026 15:44:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:44:48] "POST /adaptive HTTP/1.1" 403 -
+.127.0.0.1 - - [27/Nov/2026 15:44:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:44:48] "POST /adaptive HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 15:44:48] "GET / HTTP/1.1" 200 -
+.127.0.0.1 - - [27/Nov/2026 15:44:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:44:49] "POST /adaptive HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 15:44:49] "GET / HTTP/1.1" 200 -
+..................127.0.0.1 - - [27/Nov/2026 15:45:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:45:08] "POST /claims HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 15:45:08] "GET / HTTP/1.1" 200 -
+..................127.0.0.1 - - [27/Nov/2026 15:45:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:45:08] "POST /run HTTP/1.1" 400 -
+.127.0.0.1 - - [27/Nov/2026 15:45:08] "POST /run HTTP/1.1" 403 -
+.127.0.0.1 - - [27/Nov/2026 15:45:09] "GET / HTTP/1.1" 403 -
+.127.0.0.1 - - [27/Nov/2026 15:45:09] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:45:09] "POST /run HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 15:45:09] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:45:09] "GET / HTTP/1.1" 200 -
+...127.0.0.1 - - [27/Nov/2026 15:45:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:45:10] "POST /evidence HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 15:45:10] "GET / HTTP/1.1" 200 -
+......127.0.0.1 - - [27/Nov/2026 15:45:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:45:10] "POST /evidence-inspect HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:45:10] "POST /evidence-inspect HTTP/1.1" 403 -
+..................../usr/lib/python3.13/fractions.py:234: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f9f094ad300>
+  self = super(Fraction, cls).__new__(cls)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/fractions.py:234: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f9f094ad4e0>
+  self = super(Fraction, cls).__new__(cls)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/fractions.py:234: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f9f094ad5d0>
+  self = super(Fraction, cls).__new__(cls)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..127.0.0.1 - - [27/Nov/2026 15:45:13] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:45:13] "POST /collective HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 15:45:13] "GET / HTTP/1.1" 200 -
+..........
+----------------------------------------------------------------------
+Ran 82 tests in 29.681s
+
+OK
