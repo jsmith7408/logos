@@ -1,0 +1,17 @@
+test_calibration_and_contract (test_multidomain27.MultiDomainTests.test_calibration_and_contract) ... ok
+test_gate_restart_rollback (test_multidomain27.MultiDomainTests.test_gate_restart_rollback) ... ok
+test_graph_cases (test_multidomain27.MultiDomainTests.test_graph_cases) ... ok
+test_heldout_regression_rejected (test_multidomain27.MultiDomainTests.test_heldout_regression_rejected) ... ok
+test_logic_scenario_isolation (test_multidomain27.MultiDomainTests.test_logic_scenario_isolation) ... ok
+test_neural_rejections_and_native_first (test_multidomain27.MultiDomainTests.test_neural_rejections_and_native_first) ... ok
+test_quarantine_multi (test_multidomain27.MultiDomainTests.test_quarantine_multi) ... ok
+test_recursive_bound (test_multidomain27.MultiDomainTests.test_recursive_bound) ... ok
+test_reject_harmful_candidate (test_multidomain27.MultiDomainTests.test_reject_harmful_candidate) ... ok
+test_reproducible_disjoint (test_multidomain27.MultiDomainTests.test_reproducible_disjoint) ... ok
+test_withdrawal_budget_fail_closed (test_multidomain27.MultiDomainTests.test_withdrawal_budget_fail_closed) ... ok
+test_withdrawal_dependencies (test_multidomain27.MultiDomainTests.test_withdrawal_dependencies) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.937s
+
+OK
