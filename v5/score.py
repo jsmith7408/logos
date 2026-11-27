@@ -25,4 +25,4 @@ if __name__=='__main__':
     root=Path(__file__).parent; key=json.loads((root/'key.json').read_text()); arms={}; results={}
     for name,path in zip(('baseline','review','logos'),sys.argv[1:],strict=True):
         arms[name],results[name]=score(key,json.loads(Path(path).read_text()))
-    results['logos_vs_review']=compare(arms['review'],arms['logos']); results['logos_vs_baseline']=compare(arms['baseline'],arms['logos']); results['review_vs_baseline']=compare(arms['review'],arms['baseline']); print(json.dumps(results,indent=2))
+    results['logos_vs_review']=compare(arms['review'],arms['logos']); results['logos_vs_baseline']=compare(arms['baseline'],arms['logos']); results['review_vs_baseline']=compare(arms['baseline'],arms['review']); print(json.dumps(results,indent=2))
