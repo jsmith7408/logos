@@ -4,14 +4,12 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from core import Core, DemoProvider
 from bridge import Application
 from workflow import Workflow
-from providers import OllamaProvider
-from worker import DeadlineProvider
 from collective import Collective
 from correction import Correction
 from adjudication import evaluate
 from strategy import Strategy
 from claims import Claims
-from claim_workflow import run as run_claim_workflow, assess as assess_claim
+from claim_workflow import assess as assess_claim
 from evidence import Evidence
 
 def serve(path, port=8765):
@@ -31,18 +29,19 @@ def serve(path, port=8765):
                 runs=c.db.execute('SELECT id,status FROM runs ORDER BY rowid DESC LIMIT 50').fetchall()
                 esc=lambda x:html.escape(str(x))
                 body='<!doctype html><meta charset=utf-8><title>LOGOS V6</title><style>body{font:16px system-ui;max-width:900px;margin:40px auto;padding:16px;background:#111827;color:#eee}input,textarea,select,button{font:inherit;margin:8px;padding:8px}textarea{width:90%}pre{white-space:pre-wrap}article{border:1px solid #64748b;padding:16px;margin:12px 0}</style><h1>LOGOS V6 · Research dashboard</h1><p>Local research only. Independent validation and security assessment outstanding. V5 owner-authorized release; evidence submissions are not exposed here.</p>'
-                body+=f'<form method=post action=/run><input type=hidden name=token value="{token}"><label>Questions (one per line, up to five)</label><textarea name=questions required maxlength=20000></textarea><label>Provider <select name=provider><option value=demo>Demonstration</option><option value=ollama>Local Ollama</option></select></label><label>Installed model <input name=model maxlength=200></label><button>Run research</button></form><h2>Execution history</h2>'
+                body+=f'<form method=post action=/run><input type=hidden name=token value="{token}"><label>Questions (one per line, up to five)</label><textarea name=questions required maxlength=20000></textarea><label>Provider <select name=provider><option value=demo>Demonstration</option></select></label><button>Run research</button></form><h2>Execution history</h2>'
                 for rid,status in runs: body+=f'<article>{esc(rid)} — {esc(status)}<pre>{esc(w.status(rid))}</pre></article>'
                 collective=Collective(Application(c,None)); Correction(collective)
-                body+=f'<h2>Collective arithmetic</h2><form method=post action=/collective><input type=hidden name=token value="{token}"><label>Integer arithmetic expression <input name=questions required maxlength=256></label><label>Provider <select name=provider><option value=demo>Demonstration</option><option value=ollama>Local Ollama</option></select></label><label>Model A <input name=model maxlength=200></label><label>Model B <input name=model_b maxlength=200></label><button>Compare and verify</button></form>'
+                body+=f'<h2>Collective arithmetic</h2><form method=post action=/collective><input type=hidden name=token value="{token}"><label>Integer arithmetic expression <input name=questions required maxlength=256></label><label>Provider <select name=provider><option value=demo>Demonstration</option></select></label><button>Compare and verify</button></form>'
                 strategy=Strategy(Application(c,None))
                 body+=f'<h2>Reflective and adaptive research (read-only)</h2><pre>{esc(strategy.adaptive.reflect())}</pre>'
+                body+=f'<h2>Native-only research status</h2><pre>{esc(strategy.native.status())}</pre>'
                 body+=f'<h2>Multi-domain functional self-model (read-only)</h2><pre>{esc(strategy.multidomain.self_model())}</pre>'
-                body+=f'<h2>Adaptive research</h2><form method=post action=/adaptive><input type=hidden name=token value="{token}"><label>Question or arithmetic expression <input name=questions required maxlength=4000></label><label>Provider <select name=provider><option value=demo>Demonstration</option><option value=ollama>Local Ollama</option></select></label><label>Model A <input name=model maxlength=200></label><label>Model B <input name=model_b maxlength=200></label><button>Choose strategy and run</button></form>'
+                body+=f'<h2>Adaptive research</h2><form method=post action=/adaptive><input type=hidden name=token value="{token}"><label>Question or arithmetic expression <input name=questions required maxlength=4000></label><label>Provider <select name=provider><option value=demo>Demonstration</option></select></label><button>Choose strategy and run</button></form>'
                 Claims(collective)
                 body+=f'<h2>Structured claim comparison</h2><form method=post action=/claims><input type=hidden name=token value="{token}"><label>Collective investigation ID <input name=source required maxlength=36></label><button>Compare structured claims</button></form><p>Requires provider JSON claim arrays; no truth verification.</p>'
                 Evidence(collective)
-                body+=f'<h2>Automated provisional claims</h2><form method=post action=/claim-workflow><input type=hidden name=token value="{token}"><label>Question <input name=questions required maxlength=3000></label><input type=hidden name=provider value=ollama><label>Local model A <input name=model required></label><label>Local model B <input name=model_b required></label><button>Generate provisional claims</button></form><form method=post action=/claim-assess><input type=hidden name=token value="{token}"><label>Claim report ID <input name=source required></label><label>Claim index <input name=index type=number min=0 required></label><button>Assess evidence status</button></form>' 
+                body+=f'<h2>Historical claim assessment</h2><form method=post action=/claim-assess><input type=hidden name=token value="{token}"><label>Claim report ID <input name=source required></label><label>Claim index <input name=index type=number min=0 required></label><button>Assess evidence status</button></form>' 
                 body+=f'<h2>Evidence inspection</h2><form method=post action=/evidence-inspect><input type=hidden name=token value="{token}"><label>Claim report ID <input name=source required maxlength=36></label><label>Claim index <input name=index type=number min=0 required></label><button>Inspect reported evidence, duplicates and hashes</button></form>'
                 body+=f'<h2>Evidence snapshots</h2><form method=post action=/evidence><input type=hidden name=token value="{token}"><label>Claim report ID <input name=source required maxlength=36></label><label>Claim index (zero-based) <input name=index type=number min=0 required></label><label>Source label <input name=label required maxlength=1000></label><label>Excerpt <textarea name=excerpt required maxlength=8000></textarea></label><select name=stance><option>supports</option><option>opposes</option><option>unclear</option></select><button>Record unverified evidence</button></form>'
                 for table in ('collective','adjudication','corrections','strategies','claims','evidence'):
@@ -54,7 +53,7 @@ def serve(path, port=8765):
                 self.send(200,body)
             finally: c.close()
         def do_POST(self):
-            if not self.allowed() or self.path not in ('/run','/collective','/adaptive','/claims','/evidence','/evidence-inspect','/claim-workflow','/claim-assess'): return self.send(403,'Forbidden')
+            if not self.allowed() or self.path not in ('/run','/collective','/adaptive','/claims','/evidence','/evidence-inspect','/claim-assess'): return self.send(403,'Forbidden')
             if self.headers.get('Origin') not in (None,f'http://127.0.0.1:{self.server.server_port}'): return self.send(403,'Forbidden')
             try:
                 n=int(self.headers.get('Content-Length','0'))
@@ -82,21 +81,18 @@ def serve(path, port=8765):
                     self.send_response(303); self.send_header('Location','/'); self.end_headers(); return
                 qs=form['questions'][0].splitlines(); kind=form['provider'][0]
                 if kind=='demo': provider=DemoProvider()
-                elif kind=='ollama': provider=DeadlineProvider(OllamaProvider(form['model'][0]),35)
+                elif kind=='ollama': return self.send(403,'Third-party inference disabled')
                 else: raise ValueError()
                 c=Core(path)
                 try:
                     app=Application(c,None)
                     if self.path=='/run': Workflow(app).run(qs,provider,max_steps=5)
-                    elif self.path=='/claim-workflow':
-                        other=DemoProvider() if kind=='demo' else DeadlineProvider(OllamaProvider(form['model_b'][0]),35)
-                        run_claim_workflow(Collective(app),form['questions'][0],{'A':provider,'B':other})
                     elif self.path=='/adaptive':
-                        other=DemoProvider() if kind=='demo' else DeadlineProvider(OllamaProvider(form['model_b'][0]),35)
+                        other=DemoProvider()
                         Strategy(app).run(form['questions'][0],{'A':provider,'B':other},budget=70)
                     else:
                         expression=form['questions'][0]; evaluate(expression)
-                        other=DemoProvider() if kind=='demo' else DeadlineProvider(OllamaProvider(form['model_b'][0]),35)
+                        other=DemoProvider()
                         collective=Collective(app); correction=Correction(collective)
                         report=collective.run(expression,{'A':provider,'B':other},budget=70)
                         correction.run(report['id'])

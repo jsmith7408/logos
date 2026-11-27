@@ -1,23 +1,25 @@
 # Project LOGOS
 
-Evidence-gated local applied intelligence research: native reasoning, persistent investigations, bounded workflows, optional local model adapters and explicit uncertainty.
+## Current source: V6.0 Alpha 0.28 — self-contained native research
 
-## Latest consolidated source: V6.0 Alpha 0.27
+Owner policy: **no third-party AI inference**, including Ollama or commercial AI systems. Web access is for evidence retrieval, not inference services. The current known Ollama adapter and worker fail closed; historical releases are preserved but their provider instructions are superseded. Use the native-only CLI.
 
 - [Current V6 source](v6/)
-- [Versioned release](v6/releases/alpha-0.27/)
-- [Installation and use](v6/README.md)
-- [Development report](v6/INCREMENT.md)
-- [Multi-domain adaptive engine](v6/multidomain.py)
-- [Regression tests](v6/test_multidomain27.py)
-- [Executed experiment and split digests](v6/multidomain_experiment_27.json)
-- [V6 test log](v6/v6_tests_27.txt) and [V5 test log](v6/v5_tests_27.txt)
-- [Live model availability probe](v6/live_model_27.txt)
-- [SHA-256 manifest](v6/SHA256SUMS)
-- [Previous Alpha 0.26](v6/releases/alpha-0.26/) and [original foundation](v6/foundation/)
+- [Versioned release](v6/releases/alpha-0.28/)
+- [Installation and usage](v6/README.md)
+- [Development and limitations](v6/INCREMENT.md)
+- [Native CLI](v6/logos_native.py)
+- [Native research engine](v6/native_research.py)
+- [Public HTTPS evidence retrieval](v6/web_evidence.py)
+- [Executed experiment](v6/native_experiment_28.json)
+- [Regression tests](v6/test_native28.py)
+- [V6 test log](v6/v6_tests_28.txt) and [V5 test log](v6/v5_tests_28.txt)
+- [Live web probe](v6/web_probe_28.txt)
+- [Integrity manifest](v6/SHA256SUMS)
+- [Previous release](v6/releases/alpha-0.27/)
 
-Alpha 0.27 adds bounded, evidence-gated multi-domain strategy selection, arithmetic normalization, isolated query-local propositional scenarios and directed-graph reachability. Explicit activation requires positive gains, perfect scores and zero regressions in both locally generated development and distinct-seed holdout sets. The 180-case holdout scored 98/180 baseline vs 180/180 candidate; graph baseline abstained, and the logic task specifies local rather than global consistency. Includes source-specific dependency withdrawal, batch quarantined optional neural proposals and persistent observational self-model. **149/149 V6 and 70/70 inherited V5 test executions passed locally.**
+Native typed composition, exact Bayesian updates, persistent hypothesis records, bounded question generation and experimental cycles, external benchmark import, and a small own-corpus statistical bigram language model. Web snapshots are unverified and quarantined. **151/151 V6 and 70/70 inherited V5 test executions passed locally.** Nine native research tests added, ten legacy adapter tests replaced with three policy/validation tests. No live third-party AI inference executed. Live web probe failed DNS resolution; fixture retrieval tests passed.
 
 ## Limitations
 
-Synthetic public seeds and same-family generators do not establish externally independent validation. Single-bin confidence estimates are descriptive, not demonstrated general calibration. Live offline model probe failed because Ollama is unavailable; mocked provider tests only. No automatic model-generated premise promotion or arbitrary self-rewriting. Fixed registry and local mutable database are trusted; no production security or independent scientific certification. V5 is owner-authorized, not independently certified. No paid API or deployment. See [V5 acceptance](v5/ACCEPTANCE.md) and [full report](v6/INCREMENT.md).
+Not a general-purpose LLM, general causal inference engine or independently validated intelligence system. Imported labels and web source independence are not authenticated. No autonomous policy activation in the new research cycle. Current supported entry point has no model provider arguments, but trusted local Python retains legacy fixture interfaces; this is not an operating-system egress sandbox. No independently established scientific or security certification; V5 remains owner-authorized. See the development report for full bounds and residual limitations.

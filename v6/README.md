@@ -1,3 +1,19 @@
+# Alpha 0.28 — self-contained native runtime
+
+**Current policy:** no third-party AI inference, including locally hosted Ollama or commercial AI APIs. The old adapter and subprocess worker fail closed. The previous provider instructions below are historical and no longer operative. The fixture-only legacy interfaces are retained for regression reproduction; do not supply arbitrary provider objects. Use `logos_native.py` as the supported native-only entry point. No general-purpose LLM is included.
+
+- `python logos_native.py status`
+- `python logos_native.py objective C` then `python logos_native.py cycle`
+- `python logos_native.py train corpus.txt` then `python logos_native.py predict logos` (in-house bigram model trained from bounded local text; outputs unverified)
+- `python logos_native.py solve '{"domain":"probability","prior":"1/3","likelihood":"3/4","alternative":"1/4"}'`
+- `python logos_native.py benchmark cases.json --source "dataset provenance"` (JSON array of `{"task":...,"expected":...}`; labels and claimed independence remain unverified)
+- `python logos_native.py fetch https://example.com/ --allow-host example.com` (operator-authorized HTTPS text GET; no redirects, queries, credentials or private addresses; bounded snapshots remain quarantined)
+- `python -m unittest discover` and `(cd v5 && python -m unittest discover)`; verify `sha256sum -c SHA256SUMS`.
+
+See INCREMENT.md for limits. Historical guidance follows.
+
+---
+
 # LOGOS V6 Alpha 0.24 — consolidated
 Local Python application; Python 3.10+ and cryptography required. Install cryptography in a virtual environment if absent. Run `python -m unittest -v` and `(cd v5 && python -m unittest discover -v)` from the extracted directory. See INCREMENT.md for current changes and limitations. Core(path) stores SQLite research; Application(core, bridge) separates unverified research from authenticated V5 comparisons. Workflow(application).run(questions, provider) executes bounded plans. DemoProvider is not AI inference. Offline maintenance: stop all workers, then call Workflow(application).recover_interrupted(). See the dashboard and current evidence-lifecycle instructions below; local provider adapter is fixture-tested only. Do not expose publicly; database is mutable and OS isolation is incomplete. V5 owner acceptance is not independent certification.
 

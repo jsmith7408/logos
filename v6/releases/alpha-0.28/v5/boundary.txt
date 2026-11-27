@@ -1,0 +1,6 @@
+test_boundary (test_service.ServiceTests.test_boundary) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.555s
+
+OK
