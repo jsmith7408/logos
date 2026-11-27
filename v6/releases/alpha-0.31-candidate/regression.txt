@@ -1,0 +1,12 @@
+test_budget (test_tokenizer31.Tests.test_budget) ... ok
+test_compression (test_tokenizer31.Tests.test_compression) ... ok
+test_determinism (test_tokenizer31.Tests.test_determinism) ... ok
+test_invalid_rule (test_tokenizer31.Tests.test_invalid_rule) ... ok
+test_invalid_token (test_tokenizer31.Tests.test_invalid_token) ... ok
+test_no_cross_document (test_tokenizer31.Tests.test_no_cross_document) ... ok
+test_roundtrip (test_tokenizer31.Tests.test_roundtrip) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK
