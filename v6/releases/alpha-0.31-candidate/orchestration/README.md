@@ -1,0 +1,2 @@
+# Atomic experimental research orchestration
+129 local tests passed, five new. Atomic SQLite record and seal insertion, rejects existing unsealed records and wrong keys. Requires linguistic33, audit31 and research_adapter31. No V5 admission, no key lifecycle, no rollback/deletion protection, no unified CLI or independent validation. V5 owner-authorized only. Preserve previous modules; omit this module to roll back application code. Keep PR open until full integration.

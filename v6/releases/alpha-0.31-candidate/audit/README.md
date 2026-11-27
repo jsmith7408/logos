@@ -1,0 +1,2 @@
+# Experimental record authentication
+HMAC-SHA256 with caller supplied secret (at least 32 bytes). Use a randomly generated key stored outside the database. Local 124 tests passed, four new. Does not establish correctness, prevent deletion or replay, or implement V5 admission. Key lifecycle and unified CLI remain outstanding. Sealing trusts the supplied existing record; no historical authenticity claim. Rollback: omit new module; existing records preserved. V5 owner-authorized only. Do not merge before unified testing.

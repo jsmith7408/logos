@@ -1,0 +1,2 @@
+# Native experimental runtime
+Local baseline 129 tests passed in 0.221s; updated 133 passed in 0.237s. ResourceWarning: unclosed SQLite connections observed in inherited components. POSIX-only keyfile implementation; use a private directory. No key rotation, deletion/rollback protection, V5 admission or unified foundation testing. V5 owner-authorized only. Full raw regression log is in local archive, not this repository. Rollback: omit runtime module. Keep PR open.
