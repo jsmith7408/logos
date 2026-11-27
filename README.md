@@ -26,3 +26,7 @@ Earlier [V6 foundation](v6/README.md) and [V5 acceptance limitations](v5/ACCEPTA
 ## Alpha 0.23 acquisition variant
 
 [Preserved acquisition snapshot](v6/releases/alpha-0.23-acquisition/) — 104/104 reported local tests; optional loopback model adapter (mocked, not live validated), restricted extraction and candidate storage. Separate from the 99-test continuation snapshot; integration validation remains required.
+
+## Alpha 0.24 initial attestation release
+
+[Source](v6/releases/alpha-0.24/) · [Report](v6/releases/alpha-0.24/INCREMENT.md) · [Tests](v6/releases/alpha-0.24/v6_tests_24.txt). 109 local tests passed. HMAC authentication and explicit promotion prototype; live model, revocation, automatic continuation and independent validation outstanding.
