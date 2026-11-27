@@ -22,3 +22,4 @@ jobs:
       - run: python -m unittest discover -v
         working-directory: v6
       - run: python -m unittest v61.test_engine -v
+      - run: python -m unittest v62.test_collect -v
