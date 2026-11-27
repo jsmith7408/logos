@@ -1,0 +1,2 @@
+# Alpha 0.23
+Persistent investigation resume and history; restricted native relationship extraction, optional loopback Ollama fallback, candidate provenance and deduplication, and bounded objective prioritization. No automatic promotion. Model fallback is mocked in tests, not live validated. Substring matching does not establish entailment; candidates remain unauthenticated. Prioritization examines first 1000 objectives. Existing provider routes unchanged. 104/104 local tests passed in 28.615s; no fresh V5 run.
