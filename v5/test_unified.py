@@ -23,7 +23,6 @@ class UnifiedTests(unittest.TestCase):
     with self.assertRaises(InvalidSignature): self.u.administer(self.op,b'')
  def test_admin_replay(self):
     with self.assertRaises(sqlite3.IntegrityError): self.admin(self.op)
- def test_binding(self):
-    self.assertEqual(self.pair(b'changed')['status'],'blocked');self.assertEqual(self.pair()['status'],'candidate_comparison')
+ def test_binding(self): self.assertEqual(self.pair(b'changed')['status'],'blocked');self.assertEqual(self.pair()['status'],'candidate_comparison')
  def test_signature(self): self.s.cs=b'';self.assertEqual(self.pair()['status'],'blocked')
  def test_revocation(self): self.admin(dict(action='revoke',nonce='3',id='trusted'));self.assertEqual(self.pair()['status'],'blocked')
