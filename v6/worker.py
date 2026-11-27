@@ -11,16 +11,7 @@ class DeadlineProvider:
         self.provider, self.deadline = provider, deadline
     def reason(self, question):
         if not isinstance(question,str) or not question.strip() or len(question)>4000: raise ValueError('invalid question')
-        payload=json.dumps({'config':vars(self.provider),'question':question})
-        try:
-            result=subprocess.run([sys.executable,'-I',str(Path(__file__).resolve()),'--child'],input=payload,capture_output=True,text=True,timeout=self.deadline,check=False)
-        except subprocess.TimeoutExpired as exc:
-            raise ProviderError('worker deadline exceeded') from exc
-        if result.returncode: raise ProviderError('worker failed')
-        try: value=json.loads(result.stdout)
-        except ValueError as exc: raise ProviderError('invalid worker output') from exc
-        if not isinstance(value,str) or not value.strip(): raise ProviderError('invalid worker response')
-        return value
+        raise ProviderError('Third-party AI inference disabled by Alpha 0.28 policy')
 
 if __name__=='__main__' and sys.argv[1:]==['--child']:
     # Isolated mode excludes the script directory; explicitly restore trusted local source.

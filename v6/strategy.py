@@ -10,6 +10,7 @@ from reflection import ReflectiveMonitor
 from research_scheduler import ResearchScheduler
 from adaptive import Adaptive
 from multidomain import MultiDomain
+from native_research import NativeResearch
 class Strategy:
     def __init__(self, app):
         self.collective=Collective(app); self.db=app.core.db; self.knowledge=Knowledge(self.db)
@@ -22,6 +23,7 @@ class Strategy:
         self.scheduler=ResearchScheduler(self)
         self.adaptive=Adaptive(self)
         self.multidomain=MultiDomain(self)
+        self.native=NativeResearch(self)
         with self.db: self.db.execute('CREATE TABLE IF NOT EXISTS strategies(id TEXT PRIMARY KEY, report TEXT NOT NULL)')
     def run(self, question, providers=None, budget=None, *, native_only=False):
         if not isinstance(question,str) or not question.strip() or len(question)>4000: raise ValueError('invalid question')
@@ -40,7 +42,7 @@ class Strategy:
             report.update(strategy='native_inference',classification=evidence['status'],conclusion=evidence['status'],provider_attempts=0,proof=evidence)
         elif answer is not None:
             report.update(strategy='exact_arithmetic',classification='local_arithmetic_check',provider_attempts=0)
-        elif native_only:
+        elif native_only or providers is None:
             report.update(strategy='native_abstention',classification='unsupported_native_query',provider_attempts=0)
         else:
             source=self.collective.run(question,providers,budget=budget)
