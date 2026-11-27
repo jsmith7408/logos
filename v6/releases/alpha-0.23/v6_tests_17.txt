@@ -1,0 +1,112 @@
+test_csrf (test_adaptive_dashboard.AdaptiveDashboardTests.test_csrf) ... 127.0.0.1 - - [27/Nov/2026 07:32:04] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 07:32:04] "POST /adaptive HTTP/1.1" 403 -
+ok
+test_exact (test_adaptive_dashboard.AdaptiveDashboardTests.test_exact) ... 127.0.0.1 - - [27/Nov/2026 07:32:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 07:32:05] "POST /adaptive HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 07:32:05] "GET / HTTP/1.1" 200 -
+ok
+test_fallback (test_adaptive_dashboard.AdaptiveDashboardTests.test_fallback) ... 127.0.0.1 - - [27/Nov/2026 07:32:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 07:32:05] "POST /adaptive HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 07:32:05] "GET / HTTP/1.1" 200 -
+ok
+test_demo (test_adjudication.Tests.test_demo) ... ok
+test_equivalent (test_adjudication.Tests.test_equivalent) ... ok
+test_exact (test_adjudication.Tests.test_exact) ... ok
+test_false_consensus (test_adjudication.Tests.test_false_consensus) ... ok
+test_unparseable (test_adjudication.Tests.test_unparseable) ... ok
+test_unsupported (test_adjudication.Tests.test_unsupported) ... ok
+test_final_atomic (test_atomic.AtomicTests.test_final_atomic) ... ok
+test_recovery_preserves_completed (test_atomic.AtomicTests.test_recovery_preserves_completed) ... ok
+test_rollback (test_atomic.AtomicTests.test_rollback) ... ok
+test_demo_separate (test_bridge.BridgeTests.test_demo_separate) ... ok
+test_invalid_then_valid (test_bridge.BridgeTests.test_invalid_then_valid) ... ok
+test_revocation (test_bridge.BridgeTests.test_revocation) ... ok
+test_valid_and_replay (test_bridge.BridgeTests.test_valid_and_replay) ... ok
+test_wrong_authority (test_bridge.BridgeTests.test_wrong_authority) ... ok
+test_dashboard (test_claims.ClaimHTTP.test_dashboard) ... 127.0.0.1 - - [27/Nov/2026 07:32:22] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 07:32:22] "POST /claims HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 07:32:22] "GET / HTTP/1.1" 200 -
+ok
+test_invalid (test_claims.ClaimTests.test_invalid) ... ok
+test_persistence (test_claims.ClaimTests.test_persistence) ... ok
+test_relations (test_claims.ClaimTests.test_relations) ... ok
+test_agreement_not_truth (test_collective.Tests.test_agreement_not_truth) ... ok
+test_budget_and_duplicate (test_collective.Tests.test_budget_and_duplicate) ... ok
+test_difference_preserves_both (test_collective.Tests.test_difference_preserves_both) ... ok
+test_failure_persistent (test_collective.Tests.test_failure_persistent) ... ok
+test_oversize (test_collective.Tests.test_oversize) ... ok
+test_demo_label (test_core.Tests.test_demo_label) ... ok
+test_invalid (test_core.Tests.test_invalid) ... ok
+test_literal_search (test_core.Tests.test_literal_search) ... ok
+test_persistence (test_core.Tests.test_persistence) ... ok
+test_provider_failure (test_core.Tests.test_provider_failure) ... ok
+test_abstain (test_correction.Tests.test_abstain) ... ok
+test_preserve_and_correct (test_correction.Tests.test_preserve_and_correct) ... ok
+test_seeded (test_correction.Tests.test_seeded) ... ok
+test_unsupported (test_correction.Tests.test_unsupported) ... ok
+test_budget (test_dashboard.DashboardTests.test_budget) ... 127.0.0.1 - - [27/Nov/2026 07:32:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 07:32:23] "POST /run HTTP/1.1" 400 -
+ok
+test_csrf (test_dashboard.DashboardTests.test_csrf) ... 127.0.0.1 - - [27/Nov/2026 07:32:23] "POST /run HTTP/1.1" 403 -
+ok
+test_host (test_dashboard.DashboardTests.test_host) ... 127.0.0.1 - - [27/Nov/2026 07:32:24] "GET / HTTP/1.1" 403 -
+ok
+test_workflow_and_escape (test_dashboard.DashboardTests.test_workflow_and_escape) ... 127.0.0.1 - - [27/Nov/2026 07:32:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 07:32:24] "POST /run HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 07:32:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 07:32:24] "GET / HTTP/1.1" 200 -
+ok
+test_empty_and_bounded (test_dependency.DependencyTests.test_empty_and_bounded) ... ok
+test_transitive_groups_and_no_truth_promotion (test_dependency.DependencyTests.test_transitive_groups_and_no_truth_promotion) ... ok
+test_dashboard (test_evidence.EvidenceHTTP.test_dashboard) ... 127.0.0.1 - - [27/Nov/2026 07:32:25] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 07:32:25] "POST /evidence HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 07:32:25] "GET / HTTP/1.1" 200 -
+ok
+test_conflict (test_evidence.EvidenceTests.test_conflict) ... ok
+test_invalid (test_evidence.EvidenceTests.test_invalid) ... ok
+test_rejects_invalid_scope_and_bounded_pagination (test_evidence_integrity.EvidenceIntegrity.test_rejects_invalid_scope_and_bounded_pagination) ... ok
+test_repeated_and_conflicting_evidence_is_not_authentication (test_evidence_integrity.EvidenceIntegrity.test_repeated_and_conflicting_evidence_is_not_authentication) ... ok
+test_tampered_digest_and_claim_detected (test_evidence_integrity.EvidenceIntegrity.test_tampered_digest_and_claim_detected) ... ok
+test_dashboard_inspect_escapes_and_requires_token (test_evidence_integrity.EvidenceIntegrityHTTP.test_dashboard_inspect_escapes_and_requires_token) ... 127.0.0.1 - - [27/Nov/2026 07:32:25] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 07:32:25] "POST /evidence-inspect HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 07:32:25] "POST /evidence-inspect HTTP/1.1" 403 -
+ok
+test_failure_persistence (test_providers.Tests.test_failure_persistence) ... ok
+test_invalid (test_providers.Tests.test_invalid) ... ok
+test_redirect (test_providers.Tests.test_redirect) ... ok
+test_size (test_providers.Tests.test_size) ... ok
+test_timeout (test_providers.Tests.test_timeout) ... ok
+test_workflow (test_providers.Tests.test_workflow) ... ok
+test_budget (test_strategy.Tests.test_budget) ... ok
+test_exact_bypass (test_strategy.Tests.test_exact_bypass) ... ok
+test_fallback (test_strategy.Tests.test_fallback) ... ok
+test_recovery (test_strategy.Tests.test_recovery) ... ok
+test_seeded (test_strategy.Tests.test_seeded) ... /usr/lib/python3.13/fractions.py:234: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f9dc67ed120>
+  self = super(Fraction, cls).__new__(cls)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/fractions.py:234: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f9dc67ed030>
+  self = super(Fraction, cls).__new__(cls)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/fractions.py:234: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f9dc67ed3f0>
+  self = super(Fraction, cls).__new__(cls)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_rollback (test_unified_v6.AtomicTests.test_rollback) ... ok
+test_collective (test_unified_v6.IntegratedDashboardTests.test_collective) ... 127.0.0.1 - - [27/Nov/2026 07:32:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 07:32:28] "POST /collective HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 07:32:28] "GET / HTTP/1.1" 200 -
+ok
+test_invalid_deadline (test_worker.WorkerTests.test_invalid_deadline) ... ok
+test_slow_headers (test_worker.WorkerTests.test_slow_headers) ... ok
+test_success (test_worker.WorkerTests.test_success) ... ok
+test_workflow_failure (test_worker.WorkerTests.test_workflow_failure) ... ok
+test_budget (test_workflow.Tests.test_budget) ... ok
+test_complete (test_workflow.Tests.test_complete) ... ok
+test_failure_stops (test_workflow.Tests.test_failure_stops) ... ok
+test_invalid_plan (test_workflow.Tests.test_invalid_plan) ... ok
+test_reopen (test_workflow.Tests.test_reopen) ... ok
+
+----------------------------------------------------------------------
+Ran 70 tests in 28.598s
+
+OK

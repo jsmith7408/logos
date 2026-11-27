@@ -2,22 +2,22 @@
 
 Evidence-gated applied intelligence research: local reasoning workflows, model-independent provider adapters, persistent research records, collective comparison, deterministic arithmetic and symbolic inference, and explicit uncertainty preservation.
 
-## Latest consolidated source: V6.0 Alpha 0.22
+## Latest consolidated source: V6.0 Alpha 0.23
 
-- [Source and application](v6/releases/alpha-0.22/)
-- [Installation and use](v6/releases/alpha-0.22/README.md)
-- [Development report](v6/releases/alpha-0.22/INCREMENT.md)
-- [Native research planner](v6/releases/alpha-0.22/planner.py)
-- [Planner tests](v6/releases/alpha-0.22/test_planner.py)
-- [Regression execution log](v6/releases/alpha-0.22/v6_tests_22.txt)
-- [Integrity manifest](v6/releases/alpha-0.22/SHA256SUMS)
-- [Previous release](v6/releases/alpha-0.21/)
+- [Source and application](v6/releases/alpha-0.23/)
+- [Installation and use](v6/releases/alpha-0.23/README.md)
+- [Development report](v6/releases/alpha-0.23/INCREMENT.md)
+- [Native research planner](v6/releases/alpha-0.23/planner.py)
+- [Continuation tests](v6/releases/alpha-0.23/test_resume.py)
+- [Regression execution log](v6/releases/alpha-0.23/v6_tests_23.txt)
+- [Integrity manifest](v6/releases/alpha-0.23/SHA256SUMS)
+- [Previous release](v6/releases/alpha-0.22/)
 
-Native research planning, persistent objectives, bounded gap analysis and conditional hypotheses over explicit local facts and rules. Automatic arithmetic, scoped inference and abstention routing. No automatic fact promotion or external acquisition.
+Persistent investigation history and bounded re-evaluation after knowledge changes or restart. Prior reports remain intact. No automatic evidence acquisition.
 
 ## Status and limitations
 
-The local V6 regression suite passed **95/95 tests**, including nine new planner tests (27.986 seconds). These are local results, not independent scientific benchmarks or GitHub CI. No fresh V5 run. Planner evidence is unauthenticated and investigation is bounded by operation counts, not a wall-clock guarantee.
+The local V6 regression suite passed **99/99 tests** (28.192 seconds), including four new continuation tests. No fresh V5 run or independent CI. Concurrent writers remain unsupported; offline language-model integration remains pending.
 
 V5.0 is an **owner-authorized release**, not independent scientific validation or external security certification. Independent held-out evaluation, live-provider validation and external security assessment remain outstanding. Premises are not authenticated, dependency mapping is conservative, and this is a local single-user prototype, not a production-deployed autonomous system. Hashes do not establish authentic or independent corroboration.
 
