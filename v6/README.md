@@ -64,3 +64,9 @@ Optional live smoke test: `python live_model_check.py YOUR_INSTALLED_MODEL` agai
 ## Alpha 0.25 — Reflective monitoring and native scheduling
 
 `strategy.monitor.report(limit=100)` summarizes recent instrumented events (unauthenticated, observational only). `oid = strategy.planner.create('A')`; `jid = strategy.scheduler.schedule(oid, interval=3600, priority=5)`; call `strategy.scheduler.tick(limit=4)` from a trusted local process to run due native investigations. `strategy.scheduler.cancel(jid)` disables the job. No daemon or external providers are invoked by scheduling. See INCREMENT.md for limitations and design_inputs for the original supplied materials. Run `python -m unittest test_reflective_scheduler -v` or `python -m unittest discover -v`. See v6_tests_25.txt and v5_tests_25.txt for executed results.
+
+## Alpha 0.26: controlled adaptive research
+
+`Strategy(Application(core, None)).adaptive` exposes `reflect()`, `experiment('trim-v1', activate=False)`, explicit `experiment('trim-v1', activate=True)`, `rollback()`, `quarantine('A')`, `investigate('A')`, `score_prediction('2+2','4',0.9)`, and `calibration()`. Optional `investigate('A', local_model=OllamaProvider('installed-model'))` is native-first; provider proposals remain quarantined. All changes are restricted to predefined arithmetic routing; no dynamic code execution or automatic promotion of model assertions. The default policy is exact-v1. Read INCREMENT.md for limitations and inspect adaptive_experiment_26.json for actual benchmark outputs. Dashboard displays the bounded reflective report, not an automatic source-editing interface.
+
+Local regression: `python -m unittest discover` (137 passed); inherited V5: `(cd v5 && python -m unittest discover)` (70 executions passed). Verify `sha256sum -c SHA256SUMS` from this directory. Previous releases are preserved. No independent validation or live model result is claimed.

@@ -35,7 +35,8 @@ def serve(path, port=8765):
                 for rid,status in runs: body+=f'<article>{esc(rid)} — {esc(status)}<pre>{esc(w.status(rid))}</pre></article>'
                 collective=Collective(Application(c,None)); Correction(collective)
                 body+=f'<h2>Collective arithmetic</h2><form method=post action=/collective><input type=hidden name=token value="{token}"><label>Integer arithmetic expression <input name=questions required maxlength=256></label><label>Provider <select name=provider><option value=demo>Demonstration</option><option value=ollama>Local Ollama</option></select></label><label>Model A <input name=model maxlength=200></label><label>Model B <input name=model_b maxlength=200></label><button>Compare and verify</button></form>'
-                Strategy(Application(c,None))
+                strategy=Strategy(Application(c,None))
+                body+=f'<h2>Reflective and adaptive research (read-only)</h2><pre>{esc(strategy.adaptive.reflect())}</pre>'
                 body+=f'<h2>Adaptive research</h2><form method=post action=/adaptive><input type=hidden name=token value="{token}"><label>Question or arithmetic expression <input name=questions required maxlength=4000></label><label>Provider <select name=provider><option value=demo>Demonstration</option><option value=ollama>Local Ollama</option></select></label><label>Model A <input name=model maxlength=200></label><label>Model B <input name=model_b maxlength=200></label><button>Choose strategy and run</button></form>'
                 Claims(collective)
                 body+=f'<h2>Structured claim comparison</h2><form method=post action=/claims><input type=hidden name=token value="{token}"><label>Collective investigation ID <input name=source required maxlength=36></label><button>Compare structured claims</button></form><p>Requires provider JSON claim arrays; no truth verification.</p>'
