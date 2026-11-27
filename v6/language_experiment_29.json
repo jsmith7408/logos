@@ -1,0 +1,55 @@
+{
+  "training": {
+    "checkpoint": "f58e7ef816b2fc4bc8358525ebf00c264d4302ebd214d751d38bb320bfe2236e",
+    "seed": 29112601,
+    "epochs": 20,
+    "examples": 145,
+    "vocab": 11,
+    "initial_loss": 2.399453210749086,
+    "final_loss": 0.14840352677358037,
+    "corpus_ids": [
+      "922b511ff682186de3529d635c73aabbb46898e2243ce15fe953d4baa83fa0da"
+    ],
+    "authenticated": false,
+    "provider_attempts": 0,
+    "activated": false
+  },
+  "generation": {
+    "text": "logic . logos learns logic . logos learns logic . logos learns",
+    "authenticated": false,
+    "status": "unverified_language_candidate",
+    "provider_attempts": 0
+  },
+  "similarity": {
+    "neighbors": [
+      [
+        "evidence",
+        0.8642455187973401
+      ],
+      [
+        "logos",
+        0.24019024853802148
+      ],
+      [
+        "tests",
+        0.002044750377640574
+      ],
+      [
+        "learns",
+        -0.09054970149164328
+      ],
+      [
+        ".",
+        -0.27169647174022865
+      ]
+    ],
+    "authenticated": false,
+    "status": "learned_distributional_similarity"
+  },
+  "novel_recombination": {
+    "text": "research learns facts. logos tests evidence.",
+    "loss": 4.158726394132328,
+    "independent": false
+  },
+  "provider_attempts": 0
+}

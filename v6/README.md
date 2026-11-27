@@ -1,3 +1,31 @@
+# Alpha 0.29 — Own-weight contextual language prototype
+
+**Current policy:** no third-party AI inference, including GPT, Gemini, Grok, Claude, Meta or Ollama. No pretrained weights. Use the native CLI; historical provider instructions below are not operative.
+
+Run these commands from this directory with Python 3 (standard library only). Use the same `--db` path before each subcommand if you want a database other than the default `research.sqlite`.
+
+```sh
+python logos_native.py learn corpus.txt --source "operator-reviewed local text" --approve
+python logos_native.py train-neural --seed 29112601 --epochs 12
+# Copy checkpoint ID from training report after reviewing it:
+python logos_native.py activate-neural CHECKPOINT_ID --approve
+python logos_native.py generate "logos learns"
+python logos_native.py similar logos
+python logos_native.py chat "calculate 2+2"
+python logos_native.py chat "Does LOGOS support A?"
+python logos_native.py fetch https://example.com/ --allow-host example.com
+# Explicitly review an exact excerpt before adding it to language training:
+python logos_native.py review-web SNAPSHOT_ID "exact text excerpt" --approve
+python language_experiment29.py
+python -m unittest discover
+(cd v5 && python -m unittest discover)
+sha256sum -c SHA256SUMS
+```
+
+Use `activate-neural` with an earlier retained ID to roll back. Training saves a candidate only; activation requires operator approval. This model learns two-token patterns, not general semantic understanding or factual truth. Lower training loss alone is not proof of improvement on new text. See `INCREMENT.md` and `language_experiment_29.json` for the negative generalization result and remaining limitations. Web GET requests are restricted to document hosts in `network29.py` plus the operator allowlist, and live DNS is still unavailable in the execution environment. This policy is not an OS-level sandbox. All generated text remains unverified; no automatic fact promotion. No third-party model calls.
+
+## Historical instructions (superseded where inconsistent)
+
 # Alpha 0.28 — self-contained native runtime
 
 **Current policy:** no third-party AI inference, including locally hosted Ollama or commercial AI APIs. The old adapter and subprocess worker fail closed. The previous provider instructions below are historical and no longer operative. The fixture-only legacy interfaces are retained for regression reproduction; do not supply arbitrary provider objects. Use `logos_native.py` as the supported native-only entry point. No general-purpose LLM is included.

@@ -1,0 +1,39 @@
+................127.0.0.1 - - [27/Nov/2026 16:41:31] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:41:31] "POST /adaptive HTTP/1.1" 403 -
+./usr/lib/python3.13/ast.py:50: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f8f09d8b6a0>
+  return compile(source, filename, mode, flags,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+127.0.0.1 - - [27/Nov/2026 16:41:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:41:32] "POST /adaptive HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 16:41:32] "GET / HTTP/1.1" 200 -
+.127.0.0.1 - - [27/Nov/2026 16:41:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:41:32] "POST /adaptive HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 16:41:32] "GET / HTTP/1.1" 200 -
+..................../opt/pyvenv/lib/python3.13/site-packages/cryptography/hazmat/bindings/openssl/binding.py:51: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f8f09d8b6a0>
+  setattr(conditional_lib, attr, getattr(lib, attr))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+........127.0.0.1 - - [27/Nov/2026 16:41:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:41:48] "POST /claims HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 16:41:48] "GET / HTTP/1.1" 200 -
+..................127.0.0.1 - - [27/Nov/2026 16:41:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:41:48] "POST /run HTTP/1.1" 400 -
+.127.0.0.1 - - [27/Nov/2026 16:41:48] "POST /run HTTP/1.1" 403 -
+.127.0.0.1 - - [27/Nov/2026 16:41:49] "GET / HTTP/1.1" 403 -
+.127.0.0.1 - - [27/Nov/2026 16:41:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:41:49] "POST /run HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 16:41:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:41:49] "GET / HTTP/1.1" 200 -
+...127.0.0.1 - - [27/Nov/2026 16:41:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:41:50] "POST /evidence HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 16:41:50] "GET / HTTP/1.1" 200 -
+......127.0.0.1 - - [27/Nov/2026 16:41:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:41:50] "POST /evidence-inspect HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:41:50] "POST /evidence-inspect HTTP/1.1" 403 -
+..............................................................127.0.0.1 - - [27/Nov/2026 16:41:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:41:53] "POST /collective HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 16:41:53] "GET / HTTP/1.1" 200 -
+.............
+----------------------------------------------------------------------
+Ran 151 tests in 23.204s
+
+OK

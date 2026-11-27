@@ -1,0 +1,1 @@
+Acceptance scope: a separate process with an allowlisted JSON request interface, not a sandbox against same-UID attackers. Test rejection of arbitrary method names and malformed requests, deployment identity persistence, signed administrative requests. Scientific and security independence require external actors; no local test substitutes. Preserve negative findings.
