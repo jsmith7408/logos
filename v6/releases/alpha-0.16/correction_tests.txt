@@ -1,0 +1,9 @@
+test_abstain (test_correction.Tests.test_abstain) ... ok
+test_preserve_and_correct (test_correction.Tests.test_preserve_and_correct) ... ok
+test_seeded (test_correction.Tests.test_seeded) ... ok
+test_unsupported (test_correction.Tests.test_unsupported) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.016s
+
+OK
