@@ -1,0 +1,6 @@
+# LOGOS V6.0 Alpha 0.3 — bounded workflow
+V5 is owner-authorized, not independently certified. Recovered foundation, acceptance archive and Alpha 0.2 bridge from local attachments; master ZIP passed integrity check. Remote repository not accessed or synchronized.
+
+Run `python -m unittest -v test_core test_bridge test_workflow` from this directory; then `cd v5 && python -m unittest discover -v`. Python 3 and cryptography required. 15 V6 and 70 V5 test executions passed; inherited V5 discovery includes duplicate imported tests. Five new workflow tests. No external inference or paid calls.
+
+Workflow accepts a caller-supplied plan of at most 20 questions, with default budget five. Each step uses Application.investigate and stores a research record and status. Provider failure stops the plan and records exception type only. Research provenance remains unchanged; no promotion to authenticated evidence. Step count is not a time/token/cost limit. Crash between commits may leave orphan research or running status; no automatic resume, concurrency guarantee or hard provider timeout. No dashboard or live adapter yet. Next: atomic workflow commits and interruption recovery, then local provider adapter with timeout and output bounds. Independent scientific validation and security assessment remain outstanding.
