@@ -5,7 +5,7 @@ from core import DemoProvider
 
 class Collective:
     def __init__(self, app):
-        self.app=app; self.db=app.core.db
+        self.app=app; self.db=app.core.db; self.monitor=None
         with self.db:
             self.db.execute('CREATE TABLE IF NOT EXISTS collective(id TEXT PRIMARY KEY, report TEXT NOT NULL)')
     def run(self, question, providers, budget=None):
@@ -38,6 +38,7 @@ class Collective:
         report['status']='complete' if len(answers)==len(providers) else 'partial'
         report['comparison']='insufficient' if len(answers)<2 else 'exact_agreement' if len(set(answers))==1 else 'text_difference'
         with self.db: self._save(report)
+        if self.monitor is not None: self.monitor.record("collective",report)
         return report
     def _save(self,report):
         self.db.execute('UPDATE collective SET report=? WHERE id=?',(json.dumps(report),report['id']))
