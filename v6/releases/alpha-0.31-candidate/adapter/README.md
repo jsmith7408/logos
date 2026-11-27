@@ -1,0 +1,2 @@
+# Experimental research adapter
+Adds persistent unverified linguistic reasoning records with content-addressed deduplication. Local Phase 3 suite: 120 tests passed, including three new tests. Requires local linguistic33 and dependencies, not yet fully published or integrated into main CLI. SHA256 is integrity, not authentication. No V5 admission, no independent certification, no live provider validation. Keep PR open; do not merge. Rollback: omit adapter; original source unchanged.
