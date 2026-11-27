@@ -1,0 +1,42 @@
+.....127.0.0.1 - - [27/Nov/2026 16:04:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:04:02] "POST /adaptive HTTP/1.1" 403 -
+.127.0.0.1 - - [27/Nov/2026 16:04:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:04:03] "POST /adaptive HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 16:04:03] "GET / HTTP/1.1" 200 -
+.127.0.0.1 - - [27/Nov/2026 16:04:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:04:03] "POST /adaptive HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 16:04:03] "GET / HTTP/1.1" 200 -
+................../mnt/data/logos24/planner.py:10: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f687c2256c0>
+  self.db.execute('CREATE TABLE IF NOT EXISTS objectives(id TEXT PRIMARY KEY, question TEXT NOT NULL)')
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/logos24/planner.py:10: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f687c225b70>
+  self.db.execute('CREATE TABLE IF NOT EXISTS objectives(id TEXT PRIMARY KEY, question TEXT NOT NULL)')
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/logos24/planner.py:10: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f687c226b60>
+  self.db.execute('CREATE TABLE IF NOT EXISTS objectives(id TEXT PRIMARY KEY, question TEXT NOT NULL)')
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+127.0.0.1 - - [27/Nov/2026 16:04:22] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:04:22] "POST /claims HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 16:04:22] "GET / HTTP/1.1" 200 -
+..................127.0.0.1 - - [27/Nov/2026 16:04:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:04:23] "POST /run HTTP/1.1" 400 -
+.127.0.0.1 - - [27/Nov/2026 16:04:23] "POST /run HTTP/1.1" 403 -
+.127.0.0.1 - - [27/Nov/2026 16:04:23] "GET / HTTP/1.1" 403 -
+.127.0.0.1 - - [27/Nov/2026 16:04:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:04:24] "POST /run HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 16:04:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:04:24] "GET / HTTP/1.1" 200 -
+...127.0.0.1 - - [27/Nov/2026 16:04:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:04:24] "POST /evidence HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 16:04:24] "GET / HTTP/1.1" 200 -
+......127.0.0.1 - - [27/Nov/2026 16:04:25] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:04:25] "POST /evidence-inspect HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:04:25] "POST /evidence-inspect HTTP/1.1" 403 -
+.......................................127.0.0.1 - - [27/Nov/2026 16:04:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 16:04:28] "POST /collective HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 16:04:28] "GET / HTTP/1.1" 200 -
+...............
+----------------------------------------------------------------------
+Ran 109 tests in 30.109s
+
+OK

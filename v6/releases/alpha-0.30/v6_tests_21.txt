@@ -1,0 +1,42 @@
+127.0.0.1 - - [27/Nov/2026 15:48:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:48:03] "POST /adaptive HTTP/1.1" 403 -
+.127.0.0.1 - - [27/Nov/2026 15:48:04] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:48:04] "POST /adaptive HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 15:48:04] "GET / HTTP/1.1" 200 -
+.127.0.0.1 - - [27/Nov/2026 15:48:04] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:48:04] "POST /adaptive HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 15:48:04] "GET / HTTP/1.1" 200 -
+..................127.0.0.1 - - [27/Nov/2026 15:48:22] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:48:22] "POST /claims HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 15:48:22] "GET / HTTP/1.1" 200 -
+..................127.0.0.1 - - [27/Nov/2026 15:48:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:48:23] "POST /run HTTP/1.1" 400 -
+.127.0.0.1 - - [27/Nov/2026 15:48:23] "POST /run HTTP/1.1" 403 -
+.127.0.0.1 - - [27/Nov/2026 15:48:23] "GET / HTTP/1.1" 403 -
+.127.0.0.1 - - [27/Nov/2026 15:48:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:48:23] "POST /run HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 15:48:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:48:23] "GET / HTTP/1.1" 200 -
+...127.0.0.1 - - [27/Nov/2026 15:48:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:48:24] "POST /evidence HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 15:48:24] "GET / HTTP/1.1" 200 -
+......127.0.0.1 - - [27/Nov/2026 15:48:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:48:24] "POST /evidence-inspect HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:48:24] "POST /evidence-inspect HTTP/1.1" 403 -
+......................../mnt/data/logos21/adjudication.py:8: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f7251ec13f0>
+  def visit(n):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/logos21/adjudication.py:8: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f7251ec15d0>
+  def visit(n):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/mnt/data/logos21/adjudication.py:8: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f7251ec16c0>
+  def visit(n):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..127.0.0.1 - - [27/Nov/2026 15:48:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/Nov/2026 15:48:27] "POST /collective HTTP/1.1" 303 -
+127.0.0.1 - - [27/Nov/2026 15:48:27] "GET / HTTP/1.1" 200 -
+..........
+----------------------------------------------------------------------
+Ran 86 tests in 28.275s
+
+OK

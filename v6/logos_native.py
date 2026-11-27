@@ -15,12 +15,27 @@ def main():
     q=sub.add_parser('train-neural'); q.add_argument('--seed',type=int,default=29112601); q.add_argument('--epochs',type=int,default=12)
     q=sub.add_parser('activate-neural'); q.add_argument('checkpoint'); q.add_argument('--approve',action='store_true')
     q=sub.add_parser('generate'); q.add_argument('prompt'); q=sub.add_parser('similar'); q.add_argument('word'); q=sub.add_parser('chat'); q.add_argument('text')
+    q=sub.add_parser('learn-context'); q.add_argument('corpus'); q.add_argument('--source',required=True); q.add_argument('--split',choices=['train','validation','test'],required=True); q.add_argument('--approve',action='store_true')
+    q=sub.add_parser('review-context-web'); q.add_argument('snapshot'); q.add_argument('excerpt'); q.add_argument('--split',choices=['train','validation','test'],required=True); q.add_argument('--approve',action='store_true')
+    q=sub.add_parser('train-context'); q.add_argument('--seed',type=int,default=30112601); q.add_argument('--epochs',type=int,default=24); q.add_argument('--patience',type=int,default=4)
+    q=sub.add_parser('activate-context'); q.add_argument('checkpoint'); q.add_argument('--approve',action='store_true')
+    q=sub.add_parser('rollback-context'); q.add_argument('--approve',action='store_true')
+    q=sub.add_parser('generate-context'); q.add_argument('prompt')
     a=p.parse_args(); c=Core(a.db)
     try:
         s=Strategy(Application(c,None)); n=s.native
         from language29 import Language29
         lang=Language29(s)
-        if a.cmd=='learn':
+        from language30 import Language30
+        ctx=Language30(s)
+        if a.cmd=='learn-context':
+            with open(a.corpus,encoding='utf-8') as f: r={'corpus_id':ctx.add(f.read(40001),a.source,a.split,approved=a.approve)}
+        elif a.cmd=='review-context-web': r={'corpus_id':ctx.review_web(a.snapshot,a.excerpt,a.split,approved=a.approve)}
+        elif a.cmd=='train-context': r=ctx.train(a.seed,a.epochs,a.patience)
+        elif a.cmd=='activate-context': ctx.activate(a.checkpoint,approved=a.approve); r={'active':a.checkpoint}
+        elif a.cmd=='rollback-context': r={'active':ctx.rollback(approved=a.approve)}
+        elif a.cmd=='generate-context': r=ctx.generate(a.prompt)
+        elif a.cmd=='learn':
             with open(a.corpus,encoding='utf-8') as f: r={'corpus_id':lang.add(f.read(40001),a.source,approved=a.approve)}
         elif a.cmd=='review-web': r={'corpus_id':lang.approve_web(a.snapshot,a.excerpt,approved=a.approve)}
         elif a.cmd=='train-neural': r=lang.train(a.seed,a.epochs)

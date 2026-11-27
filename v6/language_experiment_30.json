@@ -1,0 +1,79 @@
+{
+  "experiment": {
+    "checkpoint": "babf068ea1136c7b26e9d43ad3f9dea9effb1a9ef27df0c94054e7e5298467ec",
+    "dataset": "5d50a55842ca3eb031b84e379fd9c0315694aa8104f2e5389b0ecc99e93e7cec",
+    "baseline": null,
+    "seed": 30112601,
+    "sizes": {
+      "train": 182,
+      "validation": 13,
+      "test": 13
+    },
+    "unknown_targets": {
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    },
+    "vocab": 28,
+    "initial": {
+      "train": 3.3277952392810275,
+      "validation": 3.329200300783666,
+      "test": 3.3312883736796306
+    },
+    "final": {
+      "train": 0.8924909699058656,
+      "validation": 1.7037977280305288,
+      "test": 2.048342950211941
+    },
+    "best_epoch": 3,
+    "epochs_run": 7,
+    "curve": [
+      {
+        "epoch": 1,
+        "train": 2.359007286610215,
+        "validation": 2.4979499604459128
+      },
+      {
+        "epoch": 2,
+        "train": 1.6121369700819241,
+        "validation": 1.9766444259494564
+      },
+      {
+        "epoch": 3,
+        "train": 0.8924909699058656,
+        "validation": 1.7037977280305288
+      },
+      {
+        "epoch": 4,
+        "train": 0.62911753157077,
+        "validation": 1.70682773558062
+      },
+      {
+        "epoch": 5,
+        "train": 0.5653093945361064,
+        "validation": 1.731774487900641
+      },
+      {
+        "epoch": 6,
+        "train": 0.5421407911374982,
+        "validation": 1.7848078981755349
+      },
+      {
+        "epoch": 7,
+        "train": 0.5329161908714367,
+        "validation": 1.753901425546068
+      }
+    ],
+    "eligible": true,
+    "authenticated": false,
+    "provider_attempts": 0
+  },
+  "generation": {
+    "text": "facts . research learns facts . research learns facts . research learns facts . research learns",
+    "status": "unverified_language_candidate",
+    "authenticated": false,
+    "provider_attempts": 0
+  },
+  "independent": false,
+  "note": "synthetic related sentences; final test used once for candidate admission, not independent external evaluation"
+}

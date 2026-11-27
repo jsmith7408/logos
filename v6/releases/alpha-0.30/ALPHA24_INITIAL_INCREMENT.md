@@ -1,0 +1,2 @@
+# Alpha 0.24 initial attestation integration
+109 tests passed in 30.109 seconds. Five new tests cover forgery, shared origin/key, opposition and promotion. HMAC trust configuration is in-memory; no live Ollama binary available. Promotion is explicit, not automatically revoked; continuation is explicit bounded invocation. No independent source truth or reliability validation. Based on acquisition variant; concurrent continuation snapshot not separately integrated. Not production security.

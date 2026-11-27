@@ -1,3 +1,28 @@
+# Alpha 0.30 — Native attention and regression-gated language training
+
+Current policy: no third-party AI inference or pretrained weights. Python standard library only. The new model uses a four-token window, 12-dimensional embeddings, content-dependent dot-product attention with learned position biases, a 16-unit tanh hidden layer, and softmax output. Training uses explicit analytical gradients and bounded SGD.
+
+Use separately approved training, validation, and test documents:
+
+```sh
+python logos_native.py learn-context train.txt --source "reviewed training corpus" --split train --approve
+python logos_native.py learn-context validation.txt --source "reviewed validation corpus" --split validation --approve
+python logos_native.py learn-context test.txt --source "reviewed test corpus" --split test --approve
+python logos_native.py train-context --epochs 24 --patience 4
+python logos_native.py activate-context CHECKPOINT_ID --approve
+python logos_native.py generate-context "logos learns"
+python logos_native.py rollback-context --approve
+python logos_native.py chat "calculate 2+2"
+python language_experiment30.py
+python -m unittest discover
+(cd v5 && python -m unittest discover)
+sha256sum -c SHA256SUMS
+```
+
+Vocabulary is learned from training only: frequent whole-word pieces with character fallback, not BPE. Separate normalized document fingerprints reject exact duplicate documents across splits; related passages can still overlap. Validation selects the best epoch; the test split participates in admission, so it is not an untouched independent benchmark after repeated use. Activation recomputes losses from the stored candidate and same dataset and requires improvement in train/validation and non-increase in test, compared with seeded initialization or the current active checkpoint. Explicit rollback restores the prior activation. Active corpus changes require a new database/evaluation protocol. Reviewed web excerpts may be added using `review-context-web SNAPSHOT_ID "exact excerpt" --split train --approve`; this is not fact authentication. Generated text is unverified and never used to add premises. Symbolic chat remains a separate restricted route. Earlier CLI commands are legacy experimental interfaces, not the new three-split gate. See INCREMENT.md for limitations.
+
+## Previous release instructions (historical)
+
 # Alpha 0.29 — Own-weight contextual language prototype
 
 **Current policy:** no third-party AI inference, including GPT, Gemini, Grok, Claude, Meta or Ollama. No pretrained weights. Use the native CLI; historical provider instructions below are not operative.
