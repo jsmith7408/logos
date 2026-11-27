@@ -1,0 +1,163 @@
+{
+  "cycle": {
+    "id": "3d1358d7-33b3-4375-a313-286b57de6842",
+    "seed": 28112601,
+    "stages": [
+      "question_generation",
+      "hypothesis_check",
+      "experiment",
+      "appraisal"
+    ],
+    "questions": [
+      "A",
+      "C"
+    ],
+    "hypotheses": [
+      {
+        "id": "798640599597df7a8daa32b1132f07850a68b5e71bd295650399a38074f52804",
+        "literal": "A",
+        "status": "unknown",
+        "authenticated": false,
+        "promoted": false
+      },
+      {
+        "id": "c2e8c0cc2e73b9bd1ba9ef1979e73169b471e25b0e9909efe98fde462c0bf55f",
+        "literal": "C",
+        "status": "unknown",
+        "authenticated": false,
+        "promoted": false
+      }
+    ],
+    "allocated_trials": 14,
+    "benchmark": {
+      "source": "generated invariant; not independent",
+      "dataset_digest": "c8ffce9552e294db409d6c12845a6cd93da30c32f47ee626ac1536d3fbe024ed",
+      "total": 14,
+      "correct": 14,
+      "outcomes": [
+        {
+          "task_digest": "8c292e841b497bf6e5b2e31679fcbc646a7ca8a9d783627f72075ac24d900397",
+          "result": "1/10",
+          "correct": true
+        },
+        {
+          "task_digest": "55be037824857418f716701b9b89235bf4d8758c063b66d1b1f20602d986b3fb",
+          "result": "9/10",
+          "correct": true
+        },
+        {
+          "task_digest": "4306e87a8a389eb4a51a2016ba1e9c32597728da8af4d2037b384ccd53faafa9",
+          "result": "3/10",
+          "correct": true
+        },
+        {
+          "task_digest": "ab3e051ca4fe4b8fa59f207a44a7f5b2f582d6ad283e301db648e84923ed0ec1",
+          "result": "1/2",
+          "correct": true
+        },
+        {
+          "task_digest": "88d4dae9e2f8dcace98085b62fe7b62e896794c0ce62e6f058a34621adf9d93b",
+          "result": "9/10",
+          "correct": true
+        },
+        {
+          "task_digest": "9de96335ca60ed7aae68d23aa465d2cebb7a190c14a458d17a7a002afd7075d8",
+          "result": "2/5",
+          "correct": true
+        },
+        {
+          "task_digest": "4cb0134dc680a61f854e3d013d4b4a0a8e4b521ce0680b23d1907f32a45d6c04",
+          "result": "1/2",
+          "correct": true
+        },
+        {
+          "task_digest": "ba0977a22eb7109e5b7c60943dab8b0e198003c4291dcf8addf93b8f27ed05dc",
+          "result": "1/2",
+          "correct": true
+        },
+        {
+          "task_digest": "80d90a2be3a5f4b9a54be00ae44fac79d2345789302065e28252539543df7e23",
+          "result": "1/10",
+          "correct": true
+        },
+        {
+          "task_digest": "bb0db951dd18344aad5c5ef2b3db71f4e2b8471f10a634eb5ef9702a4489a6b2",
+          "result": "1/5",
+          "correct": true
+        },
+        {
+          "task_digest": "e36b29647c45b33c1d204faa57d761163072decc2eab84cc65107534907ff14b",
+          "result": "3/10",
+          "correct": true
+        },
+        {
+          "task_digest": "37d64e1d4701dd3415d3fc05395e1d96eb8ff8d0d261687a50b80415cf4ac4e9",
+          "result": "3/10",
+          "correct": true
+        },
+        {
+          "task_digest": "4f601252257d58688f78995ed759d1da042bc40ce5968d738b73afa5442e71d1",
+          "result": "3/10",
+          "correct": true
+        },
+        {
+          "task_digest": "010eeec2b78a4000109c61968cc5f899c96b07c4f0fcc191046b150ad3036b0f",
+          "result": "3/10",
+          "correct": true
+        }
+      ],
+      "authenticated": false,
+      "independence_verified": false,
+      "activation": false
+    },
+    "provider_attempts": 0,
+    "activated": false,
+    "authenticated": false
+  },
+  "training": {
+    "tokens": 8,
+    "pairs": 6,
+    "source": "user-supplied corpus",
+    "authenticated": false
+  },
+  "prediction": {
+    "text": "logos learns facts .",
+    "authenticated": false,
+    "status": "statistical_candidate",
+    "provider_attempts": 0
+  },
+  "composition": {
+    "task": {
+      "domain": "composition",
+      "graph": {
+        "domain": "graph",
+        "edges": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "start": "A",
+        "target": "C"
+      },
+      "probability": {
+        "domain": "probability",
+        "prior": "1/3",
+        "likelihood": "3/4",
+        "alternative": "1/4"
+      }
+    },
+    "result": {
+      "path": "reachable",
+      "posterior": "3/5",
+      "causal_effect": "not_identified"
+    },
+    "authenticated": false,
+    "status": "quarantined_scenario",
+    "promoted": false
+  }
+}

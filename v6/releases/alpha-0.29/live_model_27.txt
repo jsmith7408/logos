@@ -1,0 +1,2 @@
+Ollama executable: None
+LIVE VALIDATION UNAVAILABLE: ConnectionRefusedError [Errno 111] Connection refused

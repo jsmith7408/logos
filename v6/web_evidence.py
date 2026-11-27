@@ -15,6 +15,8 @@ def fetch_public(url,allowed_hosts):
     u=urlsplit(url); h=u.hostname
     if u.scheme!='https' or not h or u.username or u.password or u.port not in (None,443) or u.fragment or u.query or h not in allowed_hosts or not h.isascii() or h.endswith('.') or any(c in url for c in '\r\n\t'):
         raise ValueError('HTTPS allowlist, no credentials, query, or fragments')
+    from network29 import check_document
+    check_document(url,allowed_hosts)
     addresses=sorted({x[4][0] for x in socket.getaddrinfo(h,443,type=socket.SOCK_STREAM)})
     if not addresses or any(not ipaddress.ip_address(x).is_global for x in addresses): raise ValueError('non-public address')
     conn=PinnedHTTPS(h,addresses[0]); start=time.monotonic()
