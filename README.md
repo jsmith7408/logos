@@ -2,11 +2,11 @@
 
 ## Current source: V6.0 Alpha 0.30 — native attention and generalization gate
 
-Owner policy: **no third-party AI inference or pretrained weights**. Web access is for evidence retrieval only. The supported entry point is the native CLI; historical provider instructions are superseded.
+Owner policy: **no third-party AI inference or pretrained weights**. Web access is for evidence retrieval only. The supported entry point is the native CLI; historical provider instructions are superseded. Do not install or configure external AI providers for LOGOS.
 
 - [Current V6 source](v6/)
 - [Versioned release](v6/releases/alpha-0.30/)
-- [Installation and usage](v6/README.md)
+- [Native installation and usage](NATIVE.md) · [Historical V6 instructions](v6/README.md)
 - [Development and limitations](v6/INCREMENT.md)
 - [Native attention engine](v6/language30.py)
 - [Native CLI](v6/logos_native.py)
