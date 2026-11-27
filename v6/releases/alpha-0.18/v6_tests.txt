@@ -1,0 +1,20 @@
+test_demo_label (test_core.Tests.test_demo_label) ... ok
+test_invalid (test_core.Tests.test_invalid) ... ok
+test_literal_search (test_core.Tests.test_literal_search) ... ok
+test_persistence (test_core.Tests.test_persistence) ... ok
+test_provider_failure (test_core.Tests.test_provider_failure) ... ok
+test_demo_separate (test_bridge.BridgeTests.test_demo_separate) ... ok
+test_invalid_then_valid (test_bridge.BridgeTests.test_invalid_then_valid) ... ok
+test_revocation (test_bridge.BridgeTests.test_revocation) ... ok
+test_valid_and_replay (test_bridge.BridgeTests.test_valid_and_replay) ... ok
+test_wrong_authority (test_bridge.BridgeTests.test_wrong_authority) ... ok
+test_budget (test_workflow.Tests.test_budget) ... ok
+test_complete (test_workflow.Tests.test_complete) ... ok
+test_failure_stops (test_workflow.Tests.test_failure_stops) ... ok
+test_invalid_plan (test_workflow.Tests.test_invalid_plan) ... ok
+test_reopen (test_workflow.Tests.test_reopen) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 15.937s
+
+OK
