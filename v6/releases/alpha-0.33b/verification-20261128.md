@@ -1,0 +1,1 @@
+Fresh local archive regression: python -m unittest discover; 155 tests in 0.325s, OK. SQLite unclosed connection ResourceWarning remains. SHA256SUMS33B verified all four listed files locally. Remote full repository regression not run. V5 owner-authorized only. No live provider or external security validation. Rollback: retain main Alpha 0.32 and prior local archives.

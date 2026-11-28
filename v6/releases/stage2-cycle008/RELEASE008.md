@@ -1,0 +1,3 @@
+# Stage 2 cycle 008 consolidated local release
+Extract into an empty directory. Python 3.13: `python -m unittest discover`; optional SymPy 1.14.0: `python oracle007.py`. Run `echo '{"operation":"arithmetic","input":"1/3+1/6"}' | python stage2_entry.py reason`.
+Recovered cleanup runtime, lifecycle patch and cycle 006/007 mathematical modules. Original archives retained. 184 tests passed and 805 generated checks reproduced. Initial incremental-only test failed because runtime32 was absent. No independent held-out dataset or full remote regression established. V5 owner-authorized only. No external AI inference.

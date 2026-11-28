@@ -1,0 +1,1 @@
+Alpha 0.33B cleanup patch: close the legacy research adapter connection on success and failure while retaining transaction semantics. No V5 admission changes. Roll back by restoring research_adapter31.py from Alpha 0.33B. Other connection owners and full remote integration remain unverified. Run python -m unittest discover in the extracted runtime. V5 is owner-authorized only.
