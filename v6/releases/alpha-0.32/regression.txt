@@ -1,0 +1,16 @@
+test_close (test_core.Tests.test_close) ... ok
+test_demo_label (test_core.Tests.test_demo_label) ... ok
+test_forged_write (test_core.Tests.test_forged_write) ... ok
+test_invalid (test_core.Tests.test_invalid) ... ok
+test_literal_search (test_core.Tests.test_literal_search) ... ok
+test_override (test_core.Tests.test_override) ... ok
+test_persistence (test_core.Tests.test_persistence) ... ok
+test_provider_failure (test_core.Tests.test_provider_failure) ... ok
+test_rollback (test_core.Tests.test_rollback) ... ok
+test_subclass (test_core.Tests.test_subclass) ... ok
+test_unauthorized_not_called (test_core.Tests.test_unauthorized_not_called) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.012s
+
+OK
