@@ -1,0 +1,1 @@
+Cycle 016: deterministic Boolean causal models, topologically ordered, fixed root context. No causal discovery or confounding identification. 221 regression tests passed; three 22-second parallel stress workers. Independent benchmarks outstanding.
